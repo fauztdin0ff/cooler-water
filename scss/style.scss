@@ -1,13 +1,13 @@
 //----------------------------------------------_Обнуление-----------------------------------------------
-@use 'sass:math';
+@use "sass:math";
 @import "null-style.scss";
 //----------------------------------------------_Шрифты----------------------------------------------
 @import "fonts.scss";
 //----------------------------------------------_Переменные-----------------------------------------
 $maxWidth: 1437;
 $maxWidthContainer: 1226;
-$red: #EC1F3A;
-$blue: #50BEFF;
+$red: #ec1f3a;
+$blue: #50beff;
 //----------------------------------------------_Шаблоны------------------------------------------
 @function prc($pxOne, $pxTwo) {
 	$result: math.div($pxOne, $pxTwo) * 100%;
@@ -29,7 +29,7 @@ $blue: #50BEFF;
 		#{$property}: $startSize + px;
 		@media (max-width: #{$maxWidthContainer + px}) {
 			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
-		}	
+		}
 	} @else if $type==2 {
 		//Только если больше контейнера
 		#{$property}: $starSize + px;
@@ -52,8 +52,8 @@ body {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
-	background-color: rgb(226,242,242);
+	font-family: "Montserrat", sans-serif;
+	background-color: rgb(255, 19, 137);
 	overflow: hidden;
 }
 main {
@@ -91,8 +91,8 @@ main {
 			& {
 				padding: 0 30px;
 			}
-			&::before{
-				content: '';
+			&::before {
+				content: "";
 				display: block;
 				position: absolute;
 				top: 0;
@@ -137,9 +137,9 @@ main {
 			position: relative;
 			flex: 0 0 44px;
 			height: 44px;
-			background: #50BEFF;
+			background: #50beff;
 			border-radius: 12.6316px;
-			border: 1px solid #50BEFF;
+			border: 1px solid #50beff;
 			box-shadow: inset 2.36842px 2.36842px 5.52632px rgba(136, 165, 191, 0.48);
 			z-index: 5;
 			&::before,
@@ -152,11 +152,12 @@ main {
 				background-color: #fff;
 				border-radius: 3px;
 				transition: all 0.3s ease 0s;
-				box-shadow: inset 0.394737px 0.394737px 0.394737px rgba(33, 68, 104, 0.4), inset -0.394737px -0.394737px 0.394737px rgba(255, 255, 255, 0.4);
+				box-shadow: inset 0.394737px 0.394737px 0.394737px rgba(33, 68, 104, 0.4),
+					inset -0.394737px -0.394737px 0.394737px rgba(255, 255, 255, 0.4);
 			}
 			&::before,
 			&::after {
-				content: '';
+				content: "";
 			}
 			&::before {
 				width: 18px;
@@ -206,7 +207,7 @@ main {
 		}
 	}
 	&__list {
-		@media (min-width: 800px) {	
+		@media (min-width: 800px) {
 			display: flex;
 			align-items: center;
 			flex-wrap: wrap;
@@ -224,14 +225,20 @@ main {
 		font-weight: 600;
 		line-height: math.div(25, 20);
 		&:hover {
-			color: #0F8BFF;
+			color: #0f8bff;
 		}
 	}
 }
 
 //----------------------------------------------Home------------------------------------------------
 .home {
-	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(226,242,242,1) 100%), url('../images/home/home-bg.png') center/ cover no-repeat;
+	background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 1) 40%,
+			rgba(226, 242, 242, 1) 100%
+		),
+		url("../images/home/home-bg.png") center/ cover no-repeat;
 	background-blend-mode: multiply;
 	&__body {
 		position: relative;
@@ -284,7 +291,7 @@ main {
 		}
 		& button {
 			flex: 0 1 40%;
-			background: #EC1F3A;
+			background: #ec1f3a;
 			border-radius: 10px;
 			margin-left: -5px;
 			z-index: 2;
@@ -337,7 +344,7 @@ main {
 			justify-content: space-between;
 			align-items: center;
 			gap: 5px;
-			background: #3287BF;
+			background: #3287bf;
 			border-radius: 10px;
 			padding: 5px 10px;
 		}
@@ -377,7 +384,7 @@ main {
 		}
 	}
 	&__title {
-		margin-bottom: 70px;		
+		margin-bottom: 70px;
 		@media (max-width: 600px) {
 			& {
 				margin-inline: 1em;
@@ -390,7 +397,7 @@ main {
 .title {
 	h2 {
 		font-size: clamp(29px, (1px + 5vw), 57px);
-		line-height: math.div(70,57);
+		line-height: math.div(70, 57);
 		font-weight: 600;
 	}
 	@media (max-width: 500px) {
@@ -404,9 +411,9 @@ main {
 	}
 }
 .swiper {
-  width: 100%;
-  min-height: 250px;
-  text-align: center;
+	width: 100%;
+	min-height: 250px;
+	text-align: center;
 }
 .swiper-wrapper {
 }
@@ -470,7 +477,7 @@ main {
 
 //----------------------------------------------Calculator----------------------------------------------
 .calculator {
-	background: url('../images/calculator/bg.png') no-repeat;
+	background: url("../images/calculator/bg.png") no-repeat;
 	background-position: center;
 	background-size: cover;
 	padding: 115px 0 241px;
@@ -494,7 +501,9 @@ main {
 		position: relative;
 		@media (max-width: 600px) {
 			& {
-				box-shadow: inset 1.03906px 2.59766px 1.03906px rgba(255, 255, 255, 0.5), inset -1.03906px 2.59766px 1.03906px rgba(255, 255, 255, 0.5), inset 0px 1.03906px 1.03906px rgba(255, 255, 255, 0.5);
+				box-shadow: inset 1.03906px 2.59766px 1.03906px rgba(255, 255, 255, 0.5),
+					inset -1.03906px 2.59766px 1.03906px rgba(255, 255, 255, 0.5),
+					inset 0px 1.03906px 1.03906px rgba(255, 255, 255, 0.5);
 				border-radius: 10px;
 			}
 		}
@@ -558,7 +567,7 @@ main {
 	height: auto;
 	@media (min-width: 600px) {
 		&:not(:last-child)::before {
-			content: '';
+			content: "";
 			display: inline-block;
 			width: 1px;
 			height: 111px;
@@ -566,7 +575,7 @@ main {
 			position: absolute;
 			right: 0;
 			top: 0;
-			background-color: #50BEFF;
+			background-color: #50beff;
 		}
 	}
 	@media (max-width: 600px) {
@@ -607,7 +616,7 @@ main {
 		input {
 			width: 40px;
 			height: 40px;
-			border: 0.920903px solid #50BEFF;
+			border: 0.920903px solid #50beff;
 			border-radius: 8.07px;
 			font-size: 16px;
 			font-weight: 700;
@@ -619,7 +628,7 @@ main {
 			margin-bottom: 17px;
 		}
 		@media (max-width: 600px) {
-			&{
+			& {
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -692,7 +701,6 @@ main {
 	}
 	&__amount {
 		@media (max-width: 600px) {
-
 		}
 	}
 	&__price {
@@ -711,7 +719,7 @@ main {
 			justify-content: center;
 			align-items: center;
 			text-align: center;
-			background-color: #EC1F3A;
+			background-color: #ec1f3a;
 			font-size: 16.5px;
 			line-height: math.div(20, 16);
 			font-weight: 900;
@@ -725,7 +733,7 @@ main {
 			}
 		}
 		&._active {
-			background-color: #50BEFF;
+			background-color: #50beff;
 			color: #fff;
 		}
 	}
@@ -743,7 +751,7 @@ main {
 	white-space: nowrap;
 	background-color: #fff;
 	color: #000;
-	border: 1px solid #50BEFF;
+	border: 1px solid #50beff;
 	text-transform: uppercase;
 	margin-right: auto;
 	@media (max-width: 600px) {
@@ -753,12 +761,12 @@ main {
 		}
 	}
 	&._active {
-		background-color: #50BEFF;
+		background-color: #50beff;
 		color: #fff;
 		border: 1px solid #fff;
 	}
 	&:hover {
-		background-color: #50BEFF;
+		background-color: #50beff;
 		color: #fff;
 	}
 }
@@ -782,7 +790,7 @@ main {
 //----------------------------------------------Catalog----------------------------------------------
 .catalog {
 	padding-bottom: 153px;
-	background: url('../images/catalog/bg.png') no-repeat;
+	background: url("../images/catalog/bg.png") no-repeat;
 	background-position: bottom;
 	&__body {
 		@media (max-width: 600px) {
@@ -824,12 +832,12 @@ main {
 		font-weight: 500;
 		cursor: pointer;
 		padding: 14px 30px;
-		background: linear-gradient(93.58deg, rgba(255, 255, 255, 0) -0.02%, rgba(255, 255, 255, 0.4) 99.98%), #F2F2F2;
+		background: linear-gradient(93.58deg, rgba(255, 255, 255, 0) -0.02%, rgba(255, 255, 255, 0.4) 99.98%), #f2f2f2;
 		border: 1px solid #000000;
 		box-shadow: 6px 10px 25px rgba(0, 0, 0, 0.1);
 		border-radius: 10px;
 		&._active {
-			background: linear-gradient(0deg, #50BEFF, #50BEFF), #F2F2F2;
+			background: linear-gradient(0deg, #50beff, #50beff), #f2f2f2;
 			color: #fff;
 		}
 	}
@@ -841,7 +849,7 @@ main {
 	overflow: hidden;
 	&__item {
 		padding: 10px;
-		background: #FFFFFF;
+		background: #ffffff;
 		border: 1px solid #000000;
 		border-radius: 10px;
 	}
@@ -909,7 +917,7 @@ main {
 			justify-content: center;
 			align-items: center;
 			text-align: center;
-			background-color: #EC1F3A;
+			background-color: #ec1f3a;
 			font-size: 16.5px;
 			line-height: math.div(20, 16);
 			font-weight: 900;
@@ -923,7 +931,7 @@ main {
 			}
 		}
 		&._active {
-			background-color: #50BEFF;
+			background-color: #50beff;
 			color: #fff;
 		}
 	}
@@ -953,7 +961,7 @@ main {
 			}
 		}
 	}
-	&__button{
+	&__button {
 		display: none;
 		@media (max-width: 767px) {
 			& {
@@ -968,7 +976,8 @@ main {
 				font-size: 18px;
 				font-weight: 500;
 				text-align: center;
-				background: linear-gradient(93.58deg, rgba(255, 255, 255, 0) -0.02%, rgba(255, 255, 255, 0.4) 99.98%), #FFFFFF;
+				background: linear-gradient(93.58deg, rgba(255, 255, 255, 0) -0.02%, rgba(255, 255, 255, 0.4) 99.98%),
+					#ffffff;
 				border: 1px solid #000000;
 				box-shadow: 6px 10px 25px rgba(0, 0, 0, 0.1);
 				border-radius: 10px;
@@ -1017,7 +1026,7 @@ main {
 	margin-top: 50px;
 	@include adaptiv-value("padding-top", 206, 100, 1);
 	@include adaptiv-value("padding-bottom", 125, 50, 1);
-	background: url('../images/footer/bg.png') no-repeat;
+	background: url("../images/footer/bg.png") no-repeat;
 	background-position: left;
 	background-size: cover;
 	position: relative;
@@ -1106,13 +1115,13 @@ main {
 		margin-bottom: 11px;
 	}
 	&__phone1 {
-		background: url('../images/footer/иконка телефон.png') left no-repeat;
+		background: url("../images/footer/иконка телефон.png") left no-repeat;
 	}
 	&__phone2 {
-		background: url('../images/footer/иконка вотсап.png') left no-repeat;
+		background: url("../images/footer/иконка вотсап.png") left no-repeat;
 	}
 	&__address {
-		background: url('../images/footer/иконка локация.png') left no-repeat;
+		background: url("../images/footer/иконка локация.png") left no-repeat;
 	}
 }
 .menu-footer {
@@ -1122,18 +1131,17 @@ main {
 		}
 	}
 	&__link {
-
 	}
 }
 .socials {
 	& > * {
 		width: 269px;
 		padding: 3px 3px 3px 15px;
-		background: #3287BF;
+		background: #3287bf;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background: #3287BF;
+		background: #3287bf;
 		border-radius: 22.4167px;
 	}
 	& > * a {
@@ -1146,7 +1154,7 @@ main {
 		width: 45px;
 		height: 45px;
 		border-radius: 50%;
-		background-color: #67C0FF;
+		background-color: #67c0ff;
 		display: flex;
 		text-align: center;
 		justify-content: center;
@@ -1174,7 +1182,6 @@ main {
 					display: inline-block;
 				}
 			}
-
 		}
 	}
 }
