@@ -71,7 +71,7 @@ body._lock {
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  background-color: rgb(242, 226, 234);
+  background-color: rgb(226, 226, 242);
   overflow: hidden;
 }
 
